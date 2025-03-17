@@ -7,13 +7,13 @@
 
 import Foundation
 
-protocol InteractorProtocol {
+protocol CategoryInteractorProtocol {
   func fetchCategories()
 }
 
-final class Interactor: InteractorProtocol {
+final class CategoryInteractor: CategoryInteractorProtocol {
   
-  var presenter: PresenterProtocol?
+  var presenter: CategoryPresenterProtocol?
   var categoryArray: [Category] = []
   
   

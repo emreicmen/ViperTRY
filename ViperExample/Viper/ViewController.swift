@@ -14,11 +14,8 @@ protocol ViewControllerProtocol: AnyObject {
 }
 
 class ViewController: UIViewController, ViewControllerProtocol {
-
   
-  @IBOutlet weak var customTableView: UITableView!
-  
-  var presenter: PresenterProtocol?
+  var presenter: CategoryPresenterProtocol?
   var categories: [Category] = []
   
   var notePresenter: NotePresenterProtocol?

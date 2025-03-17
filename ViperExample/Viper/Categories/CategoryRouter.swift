@@ -8,15 +8,15 @@
 import Foundation
 import UIKit
 
-protocol RouterProtocol {
+protocol CategoryRouterProtocol {
   static func createModule() -> UIViewController
 }
 
-class Router: RouterProtocol {
+class CategoryRouter: CategoryRouterProtocol {
   static func createModule() -> UIViewController {
     let view = ViewController()
-    let presenter = Presenter()
-    let interactor = Interactor()
+    let presenter = CategoryPresenter()
+    let interactor = CategoryInteractor()
     
     view.presenter = presenter
     presenter.view = view

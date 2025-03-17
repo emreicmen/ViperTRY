@@ -7,14 +7,14 @@
 
 import Foundation
 
-protocol PresenterProtocol {
+protocol CategoryPresenterProtocol {
   //Response olduğu için dönecek veri cinsi olabilir.
   func didFetchCategories(_ categories: [Category])
   func fetchCategories()
 }
 
-class Presenter: PresenterProtocol {
-  var interactor: InteractorProtocol?
+class CategoryPresenter: CategoryPresenterProtocol {
+  var interactor: CategoryInteractorProtocol?
   var view: ViewControllerProtocol?
   
   //Request
