@@ -45,7 +45,10 @@ extension ViewController: NoteView {
           UI'da ilgili alana basma (örn: textView.text, tableView.cell.text
           Presenter'dan alnına veriyi ilgili alanlara basar. UILabeli TableView,TextView vs.... \n
           """)
-    print(notes.count)
+    for note in notes {
+      print(note.summary)
+
+    }
   }
 
 }
