@@ -1,21 +1,17 @@
 //
-//  NoteInteractor.swift
+//  NoteManager.swift
 //  ViperTRY
 //
-//  Created by EMRE İÇMEN on 17.03.2025.
+//  Created by EMRE İÇMEN on 19.03.2025.
 //
 
 import Foundation
 
-protocol NoteInteractorProtocol {
-  func fetchNotes()
-//  func fetchNotesbyCategory(with category: Category) -> [Note]
-}
-
-final class NoteInteractor: NoteInteractorProtocol {
+final class NoteManager {
   
-  var notePresenter: NotePresenterProtocol?
-  var noteArray: [Note] = [
+  static let shared = NoteManager()
+  
+  var noteArray = [
     Note(id: 1, category: .techonology, header: "Yeni iPhone Modeli", summary: "Apple, yeni iPhone modelini tanıttı.", date: Date(), note: "Apple, son etkinliğinde iPhone 15 modelini tanıttı. Yeni model, daha büyük ekran ve geliştirilmiş kamera özelliklerine sahip."),
     Note(id: 2, category: .techonology, header: "Yapay Zeka Devrimi", summary: "Yapay zekanın geleceği hakkında yeni bir rapor yayımlandı.", date: Date(), note: "Yeni yayımlanan rapor, yapay zekanın gelecekteki potansiyelini ve bunun endüstriler üzerindeki etkilerini ele alıyor."),
     Note(id: 3, category: .techonology, header: "5G Teknolojisi", summary: "5G ağlarının yayılmaya başlamasıyla birlikte hızda büyük bir artış bekleniyor.", date: Date(), note: "5G teknolojisi, internet hızlarını ve bağlantı kalitesini önemli ölçüde artıracak. Bu yeni ağlar, mobil cihazlar için daha hızlı internet bağlantısı sağlayacak."),
@@ -33,13 +29,6 @@ final class NoteInteractor: NoteInteractorProtocol {
     Note(id: 15, category: .nature, header: "Yeni Korunan Doğa Alanları", summary: "Yeni doğa koruma alanları ilan edildi.", date: Date(), note: "Birçok yeni bölge, doğal yaşam alanlarını korumak için koruma altına alındı. Bu alanlar, biyolojik çeşitliliği koruma amacını güdüyor.")
   ]
   
-  func fetchNotes() {
-    notePresenter?.didFinishNotes(noteArray)
-  }
-  
-//  func fetchNotesbyCategory(with category: Category) -> [Note] {
-//    let filteredNotes = noteArray.filter { $0.category == category }
-//    return filteredNotes
-//  }
-  
+  private init() { }
 }
+
