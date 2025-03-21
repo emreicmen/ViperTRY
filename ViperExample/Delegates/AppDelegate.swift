@@ -17,11 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Override point for customization after application launch.
     
     // Router ile modülü oluştur
-    let noteRouterviewController = NoteRouter.setupModule()
-    
-    //Window'u ayarla
-    window = UIWindow(frame: UIScreen.main.bounds)
-    window?.rootViewController = noteRouterviewController
+    window?.rootViewController = MainRouter.setupModule()
     window?.makeKeyAndVisible()
     return true
   }

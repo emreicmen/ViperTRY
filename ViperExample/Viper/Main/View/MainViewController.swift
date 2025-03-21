@@ -7,8 +7,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
   var presenter: NotePresentation?
+  var categoryPresenter: CategoryPresenter?
+  var mainPresenter: MainPresenter?
+
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -25,12 +28,17 @@ class ViewController: UIViewController {
           UI'dan alınacak etkileşim ile (örneğin buttona basma ya da sayfa yenileme) Presenter'a bu isteği iletmek
           UI -->> Presenter \n
           """)
-    presenter?.viewDidLoad()
+
+  }
+  
+  @IBAction func buttonTapped(_ sender: Any) {
+    mainPresenter!.viewDidLoad()
+    categoryPresenter?.viewDidLoad()
   }
 }
 
 
-extension ViewController: NoteView {
+extension MainViewController: NoteView {
   func showNote(notes: [Note]) {
     print("🚨 🚨 🚨 🚨 ")
     print("""
@@ -46,9 +54,15 @@ extension ViewController: NoteView {
           Presenter'dan alnına veriyi ilgili alanlara basar. UILabeli TableView,TextView vs.... \n
           """)
     for note in notes {
-      print(note.summary)
-
+//      print(note.summary)
     }
   }
+}
 
+extension MainViewController: CategoryView {
+  func showCategories(categories: [String]) {
+    print(categories)
+  }
+  
+  
 }

@@ -12,8 +12,8 @@ import UIKit
 final class NoteRouter {
   weak var view: UIViewController?
   
-  static func setupModule() -> ViewController {
-    let viewController = UIStoryboard.viewController(fromStoryboard: "Main") as! ViewController
+  static func setupModule(text: String) -> MainViewController {
+    let viewController = UIStoryboard.viewController(fromStoryboard: "Main") as! MainViewController
     let presenter = NotePresenter()
     let router = NoteRouter()
     let interactor = NoteInteractor()
